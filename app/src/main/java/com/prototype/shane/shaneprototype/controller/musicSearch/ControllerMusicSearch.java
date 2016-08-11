@@ -7,6 +7,7 @@ import android.text.Editable;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 
 import com.nhaarman.listviewanimations.itemmanipulation.swipedismiss.OnDismissCallback;
 import com.prototype.shane.shaneprototype.customObj.MusicListAdapter;
@@ -90,7 +91,8 @@ public class ControllerMusicSearch extends FragmentMusicSearch implements OnDism
     @Override
     public void onDismiss(ViewGroup listView, int[] reverseSortedPositions) {
         for (int position: reverseSortedPositions ) {
-            Cursor cursor = (Cursor) listView.getChildAt(position);
+			AbsListView absListView = (AbsListView) listView;
+            Cursor cursor = (Cursor) absListView.getItemAtPosition(position);
             long id = cursor.getLong(cursor.getColumnIndex(MusicSQLiteOpenHelper.ID));
             getActivity().getContentResolver().delete(MusicContentProvider.CONTENT_URI, MusicSQLiteOpenHelper.ID + " =? ", new String[]{"" + id});
         }
