@@ -18,6 +18,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:exported="true"
+            android:name=".database.sql.music.MusicContentProvider"
+            android:authorities="@string/music_provider_authorities"
+            android:readPermission="shane.frankly.READ_DATABASE"
+            android:writePermission="shane.frankly.WRITE_DATABASE"/>
+
     </application>
 
 </manifest>

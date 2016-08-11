@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.prototype.shane.shaneprototype.musicSearch.ControllerMusicSearch;
+
 /**
  * A placeholder fragment containing a simple view.
  */
@@ -25,7 +27,7 @@ public class MainActivityFragment extends Fragment {
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                getActivity().getSupportFragmentManager().beginTransaction().replace(getId(), new ControllerMusicSearch()).addToBackStack(null).commit();
             }
         };
     }
