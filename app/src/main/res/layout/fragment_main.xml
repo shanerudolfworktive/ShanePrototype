@@ -19,5 +19,11 @@
         android:layout_height="wrap_content"
         android:text="@string/fileScanProtype"/>
 
+    <Button
+        android:id="@+id/buttonFlickrSharkPrototype"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/flikrSharkProtype"/>
+
 
 </LinearLayout>

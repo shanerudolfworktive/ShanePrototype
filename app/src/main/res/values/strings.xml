@@ -3,6 +3,7 @@
     <string name="action_settings">Settings</string>
     <string name="musicSearchPrototype">Music Search Prototype</string>
     <string name="fileScanProtype">File Scan Prototype</string>
+    <string name="flikrSharkProtype">Flikr Shark Prototype</string>
 
 
     <string name="title_key">title: </string>
@@ -26,5 +27,13 @@
     <string name="fileFrequency">file frequency: </string>
     <string name="fileExtension">file extension: </string>
 
-
+    <string name="title">Title: </string>
+    <string name="description">Description: </string>
+    <string name="username">User Name: </string>
+    <string name="image_downloading_inprogress_error">Image is in downloading progress, please wait till it finish.</string>
+    <string name="image_saved_to_camera">Image saved to cameras.</string>
+    <string name="network_error_message">Network error, please try again.</string>
+    <string name="errorTitle">Error!</string>
+    <string name="generalErrorMessage">Oops, something goes wrong, pull to refresh again.</string>
+    <string name="startRecording">Start Recording</string>
 </resources>

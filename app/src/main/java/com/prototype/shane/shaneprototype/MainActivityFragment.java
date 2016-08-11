@@ -6,7 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.prototype.shane.shaneprototype.controller.musicSearch.ControllerMusicSearch;
 import com.prototype.shane.shaneprototype.controller.sdFileScan.ControllerSDFileScan;
+import com.prototype.shane.shaneprototype.view.flickrSharkGrid.FragmentFlickrSharkGrid;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -21,6 +23,7 @@ public class MainActivityFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
         rootView.findViewById(R.id.buttonMusicSearchPrototype).setOnClickListener(createMusicSearchClickListener());
         rootView.findViewById(R.id.buttonSDFileScanPrototype).setOnClickListener(createSDFileScanClickListener());
+        rootView.findViewById(R.id.buttonFlickrSharkPrototype).setOnClickListener(createFlickrSharkClickListener());
         return rootView;
     }
 
@@ -28,7 +31,7 @@ public class MainActivityFragment extends Fragment {
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                getActivity().getSupportFragmentManager().beginTransaction().replace(getId(), new ControllerMusicSearch()).addToBackStack(null).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(getId(), new ControllerMusicSearch()).addToBackStack(null).commit();
             }
         };
     }
@@ -38,6 +41,15 @@ public class MainActivityFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 getActivity().getSupportFragmentManager().beginTransaction().replace(getId(), new ControllerSDFileScan()).addToBackStack(null).commit();
+            }
+        };
+    }
+
+    private View.OnClickListener createFlickrSharkClickListener(){
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager().beginTransaction().replace(getId(), new FragmentFlickrSharkGrid()).addToBackStack(null).commit();
             }
         };
     }

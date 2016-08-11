@@ -41,4 +41,8 @@ public class Util {
         if (index != -1) extension = fileName.substring(index+1);
         return extension;
     }
+
+    public static String getFlickrPhotoInfoURL(long id){
+        return Const.URL_BASE + "services/rest/?method=flickr.photos.getInfo&api_key=" + Const.API_KEY + "&nojsoncallback=1&photo_id="+ id + "&format=json";
+    }
 }

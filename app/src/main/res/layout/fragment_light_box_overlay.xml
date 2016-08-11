@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBlack20PercentTransparent"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <ImageButton
+            android:id="@+id/imageButtonDownload"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/download_icon"
+            android:scaleType="fitCenter"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBlack20PercentTransparent"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:padding="6dp">
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="@string/title"
+            android:textSize="16sp"
+            android:textColor="@color/colorWhite"/>
+
+        <TextView
+            android:id="@+id/textViewUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="@string/username"
+            android:textSize="16sp"
+            android:textColor="@color/colorWhite"/>
+
+        <TextView
+            android:id="@+id/textViewDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="@string/description"
+            android:textSize="16sp"
+            android:textColor="@color/colorWhite"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
