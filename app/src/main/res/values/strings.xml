@@ -2,6 +2,7 @@
     <string name="app_name">ShanePrototype</string>
     <string name="action_settings">Settings</string>
     <string name="musicSearchPrototype">Music Search Prototype</string>
+    <string name="fileScanProtype">File Scan Prototype</string>
 
 
     <string name="title_key">title: </string>
@@ -15,6 +16,15 @@
     <string name="save">save</string>
 
     <string name="music_provider_authorities">com.shanefrankly.content.provider</string>
+
+    <string name="startScan">Start Scanning</string>
+    <string name="displayTop10LargestFiles">Display top 10 largest Files</string>
+    <string name="displayTop5FrequentFiles">Display top 5 Frequent Files</string>
+    <string name="everageFileSize">Everage file size:</string>
+    <string name="fileName">file name: </string>
+    <string name="fileSize">file size: </string>
+    <string name="fileFrequency">file frequency: </string>
+    <string name="fileExtension">file extension: </string>
 
 
 </resources>

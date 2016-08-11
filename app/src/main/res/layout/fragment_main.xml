@@ -13,5 +13,11 @@
         android:layout_height="wrap_content"
         android:text="@string/musicSearchPrototype"/>
 
+    <Button
+        android:id="@+id/buttonSDFileScanPrototype"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/fileScanProtype"/>
+
 
 </LinearLayout>

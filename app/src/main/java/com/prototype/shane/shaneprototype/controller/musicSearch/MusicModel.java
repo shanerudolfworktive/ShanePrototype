@@ -1,4 +1,4 @@
-package com.prototype.shane.shaneprototype.musicSearch;
+package com.prototype.shane.shaneprototype.controller.musicSearch;
 
 
 public class MusicModel {
