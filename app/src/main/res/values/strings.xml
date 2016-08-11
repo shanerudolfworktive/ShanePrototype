@@ -4,6 +4,7 @@
     <string name="musicSearchPrototype">Music Search Prototype</string>
     <string name="fileScanProtype">File Scan Prototype</string>
     <string name="flikrSharkProtype">Flikr Shark Prototype</string>
+    <string name="wordSearchGamePrototype">WordSearchGamePrototype</string>
 
 
     <string name="title_key">title: </string>
@@ -36,4 +37,9 @@
     <string name="errorTitle">Error!</string>
     <string name="generalErrorMessage">Oops, something goes wrong, pull to refresh again.</string>
     <string name="startRecording">Start Recording</string>
+
+    <string name="sourceWord">Word: </string>
+    <string name="showHint">Show Hint</string>
+    <string name="congratulations">Congratulations, you completed the game</string>
+    <string name="next_level">next level</string>
 </resources>

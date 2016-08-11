@@ -25,5 +25,11 @@
         android:layout_height="wrap_content"
         android:text="@string/flikrSharkProtype"/>
 
+    <Button
+        android:id="@+id/buttonWordSearchGamePrototype"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/wordSearchGamePrototype"/>
+
 
 </LinearLayout>
