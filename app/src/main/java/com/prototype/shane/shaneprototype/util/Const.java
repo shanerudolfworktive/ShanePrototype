@@ -14,4 +14,5 @@ public interface Const {
 
 	String URL_GAME_DATA = URL_BASE_WORD_SEARCH + "duolingo-data/s3/js2/find_challenges.txt";
 
+	String CHAT_SERVER_URL = "http://chat.socket.io";
 }

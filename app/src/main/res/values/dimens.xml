@@ -6,4 +6,5 @@
 
     <dimen name="game_scene_fragment_width">280dp</dimen>
     <dimen name="game_scene_fragment_height">280dp</dimen>
+    <dimen name="spacing">8dp</dimen>
 </resources>

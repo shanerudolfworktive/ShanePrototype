@@ -1,6 +1,7 @@
 package com.prototype.shane.shaneprototype.view.wordSearch;
 
 import android.content.DialogInterface;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
@@ -40,6 +41,7 @@ public class FragmentSceneMain extends BaseFragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         fetchGameDataAnStartGame();
+        getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 
     private void fetchGameDataAnStartGame(){
@@ -88,13 +90,14 @@ public class FragmentSceneMain extends BaseFragment {
         return rootView;
     }
 
+    FragmentGamePlayMain fragmentGamePlayMain;
     private void displayGmaeData(final int progress){
         if (progress >= gameDataArrayList.size()) return;
         final GameDisplayResponseModel progressData = gameDataArrayList.get(progress);
         sourceWord = (TextView) getView().findViewById(R.id.textViewSourceWord);
         sourceWord.setText(progressData.word);
 
-        final FragmentGamePlayMain fragment = FragmentGamePlayMain.create(progressData.characterGrid);
+        fragmentGamePlayMain = FragmentGamePlayMain.create(progressData.characterGrid);
         hintOnClickListener = new View.OnClickListener() {
             int hintCount = 1;
             @Override
@@ -102,17 +105,17 @@ public class FragmentSceneMain extends BaseFragment {
                 if (!progressData.wordLocations.keySet().iterator().hasNext()) return;
                 String[] location = progressData.wordLocations.keySet().iterator().next().split(",");
                 if (hintCount == 1) {
-                    fragment.highLightCell(Integer.parseInt(location[0]), Integer.parseInt(location[1]));
+                    fragmentGamePlayMain.highLightCell(Integer.parseInt(location[0]), Integer.parseInt(location[1]));
                     hintCount++;
                 }else{
-                    fragment.highLightCell(Integer.parseInt(location[location.length - 2]), Integer.parseInt(location[location.length - 1]));
+                    fragmentGamePlayMain.highLightCell(Integer.parseInt(location[location.length - 2]), Integer.parseInt(location[location.length - 1]));
                     hintCount = 1;
                 }
             }
         };
         getView().findViewById(R.id.buttonShowHint).setOnClickListener(hintOnClickListener);
 
-        fragment.setOnWordSelectedListen(new FragmentGamePlayMain.OnWordSelectedListener() {
+        fragmentGamePlayMain.setOnWordSelectedListen(new FragmentGamePlayMain.OnWordSelectedListener() {
             @Override
             public boolean onWordSelected(String word) {
                 boolean foundCorrect = false;
@@ -146,8 +149,18 @@ public class FragmentSceneMain extends BaseFragment {
                 return foundCorrect;
             }
         });
-        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, fragment).commit();
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, fragmentGamePlayMain).commit();
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        if (isRemoving()) if (fragmentGamePlayMain != null) getActivity().getSupportFragmentManager().beginTransaction().remove(fragmentGamePlayMain).commit();
+    }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
+    }
 }

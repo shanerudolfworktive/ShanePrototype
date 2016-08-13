@@ -4,8 +4,8 @@
     <string name="musicSearchPrototype">Music Search Prototype</string>
     <string name="fileScanProtype">File Scan Prototype</string>
     <string name="flikrSharkProtype">Flikr Shark Prototype</string>
-    <string name="wordSearchGamePrototype">WordSearchGamePrototype</string>
-
+    <string name="wordSearchGamePrototype">Word Search Game Prototype</string>
+    <string name="socketChatPrototype">Socket Chat Prototype</string>
 
     <string name="title_key">title: </string>
     <string name="artist_key">artist: </string>
@@ -42,4 +42,32 @@
     <string name="showHint">Show Hint</string>
     <string name="congratulations">Congratulations, you completed the game</string>
     <string name="next_level">next level</string>
+
+
+    <string name="action_leave">Leave</string>
+    <string name="action_send">Send</string>
+    <string name="prompt_message">Message</string>
+
+    <string name="connect">Connected</string>
+    <string name="disconnect">Disconnected, Please check your internet connection</string>
+    <string name="error_connect">Failed to connect</string>
+
+    <!-- messages -->
+    <string name="message_welcome">Welcome to Socket.IO Chat –</string>
+    <plurals name="message_participants">
+        <item quantity="one">there\'s %d participant</item>
+        <item quantity="other">there are %d participants</item>
+    </plurals>
+    <string name="message_user_joined">%s joined</string>
+    <string name="message_user_left">%s left</string>
+    <string name="user_action_typing">is typing</string>
+
+    <string name="title_activity_login">Join</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_username">What\'s your nickname?</string>
+    <string name="action_sign_in">Join</string>
+    <string name="action_sign_in_short">Join</string>
+
+    <string name="error_field_required">This field is required</string>
 </resources>
