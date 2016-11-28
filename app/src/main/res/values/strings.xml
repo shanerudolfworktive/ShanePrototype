@@ -6,6 +6,8 @@
     <string name="flikrSharkProtype">Flikr Shark Prototype</string>
     <string name="wordSearchGamePrototype">Word Search Game Prototype</string>
     <string name="socketChatPrototype">Socket Chat Prototype</string>
+    <string name="inAppGmailPrototype">In App Gmail Prototype</string>
+    <string name="dfuPrototype">DFU Prototype</string>
 
     <string name="title_key">title: </string>
     <string name="artist_key">artist: </string>

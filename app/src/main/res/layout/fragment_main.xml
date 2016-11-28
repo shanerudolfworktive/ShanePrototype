@@ -41,6 +41,12 @@
         android:id="@+id/buttonInAppGmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/socketChatPrototype"/>
+        android:text="@string/inAppGmailPrototype"/>
+
+    <Button
+        android:id="@+id/buttonTestDFU"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dfuPrototype"/>
 
 </LinearLayout>
