@@ -37,4 +37,10 @@
         android:layout_height="wrap_content"
         android:text="@string/socketChatPrototype"/>
 
+    <Button
+        android:id="@+id/buttonInAppGmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/socketChatPrototype"/>
+
 </LinearLayout>
