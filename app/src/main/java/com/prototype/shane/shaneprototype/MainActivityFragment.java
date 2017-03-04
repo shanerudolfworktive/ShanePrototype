@@ -13,12 +13,15 @@ import com.prototype.shane.shaneprototype.controller.musicSearch.ControllerMusic
 import com.prototype.shane.shaneprototype.controller.sdFileScan.ControllerSDFileScan;
 import com.prototype.shane.shaneprototype.view.chatApp.FragmentChat;
 import com.prototype.shane.shaneprototype.view.flickrSharkGrid.FragmentFlickrSharkGrid;
+import com.prototype.shane.shaneprototype.view.rxAndroid.SearchMovieFragment;
 import com.prototype.shane.shaneprototype.view.wordSearch.FragmentSceneMain;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+
+import io.reactivex.android.plugins.RxAndroidPlugins;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -37,6 +40,7 @@ public class MainActivityFragment extends Fragment {
         rootView.findViewById(R.id.buttonWordSearchGamePrototype).setOnClickListener(createWordSearchGameClickListener());
         rootView.findViewById(R.id.buttonSocketChatPrototype).setOnClickListener(createSocketChatClickListener());
         rootView.findViewById(R.id.buttonInAppGmail).setOnClickListener(createInappOnclickListener());
+        rootView.findViewById(R.id.buttonRxAndroid).setOnClickListener(createRXAndroidClickListener());
         return rootView;
     }
 
@@ -72,6 +76,15 @@ public class MainActivityFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 getActivity().getSupportFragmentManager().beginTransaction().replace(getId(), new FragmentSceneMain()).addToBackStack(null).commit();
+            }
+        };
+    }
+
+    private View.OnClickListener createRXAndroidClickListener(){
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager().beginTransaction().replace(getId(), new SearchMovieFragment()).addToBackStack(null).commit();
             }
         };
     }
