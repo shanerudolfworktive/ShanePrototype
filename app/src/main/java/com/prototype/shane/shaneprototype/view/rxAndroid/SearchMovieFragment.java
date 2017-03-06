@@ -20,6 +20,7 @@ import com.google.gson.Gson;
 import com.prototype.shane.shaneprototype.R;
 import com.prototype.shane.shaneprototype.model.rxAndroid.MovieSearchModel;
 import com.prototype.shane.shaneprototype.util.Const;
+import com.prototype.shane.shaneprototype.view.BaseFragment;
 import com.prototype.shane.shaneprototype.volley.GsonRequest;
 
 import java.util.HashMap;
@@ -39,7 +40,7 @@ import io.reactivex.schedulers.Schedulers;
  * Created by shane on 3/1/17.
  */
 
-public class SearchMovieFragment extends Fragment {
+public class SearchMovieFragment extends BaseFragment {
     EditText editTextSearchMoview;
 
     private RecyclerView mRecyclerView;

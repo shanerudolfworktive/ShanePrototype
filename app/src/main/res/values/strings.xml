@@ -9,6 +9,7 @@
     <string name="inAppGmailPrototype">In App Gmail Prototype</string>
     <string name="dfuPrototype">DFU Prototype</string>
     <string name="rxAndroidPrototype">RX Android Prototype</string>
+    <string name="paintCodeRobot">Paint Code Robot</string>
 
     <string name="title_key">title: </string>
     <string name="artist_key">artist: </string>
