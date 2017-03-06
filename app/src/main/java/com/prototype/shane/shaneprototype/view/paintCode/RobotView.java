@@ -69,7 +69,7 @@ public class RobotView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        RobotStyleKit.drawRobot(canvas, new RectF(0,0,getWidth(),getHeight()),RobotStyleKit.ResizingBehavior.AspectFit, Color.argb(red,30, 198, 57), angle);
+        RobotStyleKit.drawRobot(canvas, new RectF(0,0,getWidth(),getHeight()),RobotStyleKit.ResizingBehavior.AspectFit, Color.rgb(red, 198, 57), angle);
     }
 
 

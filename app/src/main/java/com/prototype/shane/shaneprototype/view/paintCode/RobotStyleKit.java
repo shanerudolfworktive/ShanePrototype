@@ -1,12 +1,12 @@
 package com.prototype.shane.shaneprototype.view.paintCode;
 
-import android.graphics.Paint;
-import android.graphics.Matrix;
-import android.graphics.RectF;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Path;
-import java.util.Stack;
+        import android.graphics.Paint;
+        import android.graphics.Matrix;
+        import android.graphics.RectF;
+        import android.graphics.Canvas;
+        import android.graphics.Color;
+        import android.graphics.Path;
+        import java.util.Stack;
 
 
 
@@ -20,8 +20,8 @@ import java.util.Stack;
  * @author AuthorName
  */
 public class RobotStyleKit {
-    
-    
+
+
     // Resizing Behavior
     public enum ResizingBehavior {
         AspectFit, //!< The content is proportionally resized to fit into the target rectangle.
@@ -29,12 +29,12 @@ public class RobotStyleKit {
         Stretch, //!< The content is stretched to match the entire target rectangle.
         Center, //!< The content is centered in the target rectangle, but it is NOT resized.
     }
-    
+
     // In Trial version of PaintCode, the code generation is limited to 3 canvases.
-    
+
     // Canvas Drawings
     // Tab
-    
+
     private static class CacheForRobot {
         private static Paint paint = new Paint();
         private static RectF originalFrame = new RectF(0f, 0f, 525f, 447f);
@@ -61,27 +61,27 @@ public class RobotStyleKit {
         private static RectF rectangle7Rect = new RectF();
         private static Path rectangle7Path = new Path();
     }
-    
+
     public static void drawRobot(Canvas canvas, int bodyColor, float angle) {
         RobotStyleKit.drawRobot(canvas, new RectF(0f, 0f, 525f, 447f), ResizingBehavior.AspectFit, bodyColor, angle);
     }
-    
+
     public static void drawRobot(Canvas canvas, RectF targetFrame, ResizingBehavior resizing, int bodyColor, float angle) {
         // General Declarations
         Stack<Matrix> currentTransformation = new Stack<Matrix>();
         currentTransformation.push(new Matrix());
         Paint paint = CacheForRobot.paint;
-        
+
         // Local Colors
         int color = Color.argb(255, 255, 255, 255);
-        
+
         // Resize to Target Frame
         canvas.save();
         RectF resizedFrame = CacheForRobot.resizedFrame;
         RobotStyleKit.resizingBehaviorApply(resizing, CacheForRobot.originalFrame, targetFrame, resizedFrame);
         canvas.translate(resizedFrame.left, resizedFrame.top);
         canvas.scale(resizedFrame.width() / 525f, resizedFrame.height() / 447f);
-        
+
         // Rectangle
         RectF rectangleRect = CacheForRobot.rectangleRect;
         rectangleRect.set(159f, 151f, 362f, 323f);
@@ -94,13 +94,13 @@ public class RobotStyleKit {
         rectangleCornerRadii[4] = rectangleCornerRadii[5] = rectangleCornerRadius;
         rectangleCornerRadii[6] = rectangleCornerRadii[7] = rectangleCornerRadius;
         rectanglePath.addRoundRect(rectangleRect, rectangleCornerRadii, Path.Direction.CW);
-        
+
         paint.reset();
         paint.setFlags(Paint.ANTI_ALIAS_FLAG);
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(bodyColor);
         canvas.drawPath(rectanglePath, paint);
-        
+
         // Rectangle 2
         canvas.save();
         canvas.translate(135.31f, 173.58f);
@@ -112,53 +112,53 @@ public class RobotStyleKit {
         Path rectangle2Path = CacheForRobot.rectangle2Path;
         rectangle2Path.reset();
         rectangle2Path.addRoundRect(rectangle2Rect, 23f, 23f, Path.Direction.CW);
-        
+
         paint.reset();
         paint.setFlags(Paint.ANTI_ALIAS_FLAG);
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(bodyColor);
         canvas.drawPath(rectangle2Path, paint);
         canvas.restore();
-        
+
         // Rectangle 3
         RectF rectangle3Rect = CacheForRobot.rectangle3Rect;
         rectangle3Rect.set(370f, 161f, 401f, 284f);
         Path rectangle3Path = CacheForRobot.rectangle3Path;
         rectangle3Path.reset();
         rectangle3Path.addRoundRect(rectangle3Rect, 23f, 23f, Path.Direction.CW);
-        
+
         paint.reset();
         paint.setFlags(Paint.ANTI_ALIAS_FLAG);
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(bodyColor);
         canvas.drawPath(rectangle3Path, paint);
-        
+
         // Rectangle 5
         RectF rectangle5Rect = CacheForRobot.rectangle5Rect;
         rectangle5Rect.set(294f, 315f, 322f, 381f);
         Path rectangle5Path = CacheForRobot.rectangle5Path;
         rectangle5Path.reset();
         rectangle5Path.addRoundRect(rectangle5Rect, 23f, 23f, Path.Direction.CW);
-        
+
         paint.reset();
         paint.setFlags(Paint.ANTI_ALIAS_FLAG);
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(bodyColor);
         canvas.drawPath(rectangle5Path, paint);
-        
+
         // Rectangle 4
         RectF rectangle4Rect = CacheForRobot.rectangle4Rect;
         rectangle4Rect.set(202f, 315f, 230f, 381f);
         Path rectangle4Path = CacheForRobot.rectangle4Path;
         rectangle4Path.reset();
         rectangle4Path.addRoundRect(rectangle4Rect, 23f, 23f, Path.Direction.CW);
-        
+
         paint.reset();
         paint.setFlags(Paint.ANTI_ALIAS_FLAG);
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(bodyColor);
         canvas.drawPath(rectangle4Path, paint);
-        
+
         // Oval
         RectF ovalRect = CacheForRobot.ovalRect;
         ovalRect.set(151f, 65f, 370f, 229f);
@@ -167,39 +167,39 @@ public class RobotStyleKit {
         ovalPath.addArc(ovalRect, 180f, (360f * (float) Math.ceil(180f / 360f)) - 180f);
         ovalPath.lineTo(ovalRect.centerX(), ovalRect.centerY());
         ovalPath.close();
-        
+
         paint.reset();
         paint.setFlags(Paint.ANTI_ALIAS_FLAG);
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(bodyColor);
         canvas.drawPath(ovalPath, paint);
-        
+
         // Oval 2
         RectF oval2Rect = CacheForRobot.oval2Rect;
         oval2Rect.set(219f, 105f, 227f, 113f);
         Path oval2Path = CacheForRobot.oval2Path;
         oval2Path.reset();
         oval2Path.addOval(oval2Rect, Path.Direction.CW);
-        
+
         paint.reset();
         paint.setFlags(Paint.ANTI_ALIAS_FLAG);
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(color);
         canvas.drawPath(oval2Path, paint);
-        
+
         // Oval 3
         RectF oval3Rect = CacheForRobot.oval3Rect;
         oval3Rect.set(296f, 105f, 304f, 113f);
         Path oval3Path = CacheForRobot.oval3Path;
         oval3Path.reset();
         oval3Path.addOval(oval3Rect, Path.Direction.CW);
-        
+
         paint.reset();
         paint.setFlags(Paint.ANTI_ALIAS_FLAG);
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(color);
         canvas.drawPath(oval3Path, paint);
-        
+
         // Rectangle 6
         canvas.save();
         canvas.translate(219.46f, 41.2f);
@@ -211,14 +211,14 @@ public class RobotStyleKit {
         Path rectangle6Path = CacheForRobot.rectangle6Path;
         rectangle6Path.reset();
         rectangle6Path.addRoundRect(rectangle6Rect, 23f, 23f, Path.Direction.CW);
-        
+
         paint.reset();
         paint.setFlags(Paint.ANTI_ALIAS_FLAG);
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(bodyColor);
         canvas.drawPath(rectangle6Path, paint);
         canvas.restore();
-        
+
         // Rectangle 7
         canvas.save();
         canvas.translate(298.46f, 38.2f);
@@ -230,34 +230,34 @@ public class RobotStyleKit {
         Path rectangle7Path = CacheForRobot.rectangle7Path;
         rectangle7Path.reset();
         rectangle7Path.addRoundRect(rectangle7Rect, 23f, 23f, Path.Direction.CW);
-        
+
         paint.reset();
         paint.setFlags(Paint.ANTI_ALIAS_FLAG);
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(bodyColor);
         canvas.drawPath(rectangle7Path, paint);
         canvas.restore();
-        
+
         canvas.restore();
     }
-    
-    
+
+
     // Resizing Behavior
     public static void resizingBehaviorApply(ResizingBehavior behavior, RectF rect, RectF target, RectF result) {
         if (rect.equals(target) || target == null) {
             result.set(rect);
             return;
         }
-        
+
         if (behavior == ResizingBehavior.Stretch) {
             result.set(target);
             return;
         }
-        
+
         float xRatio = Math.abs(target.width() / rect.width());
         float yRatio = Math.abs(target.height() / rect.height());
         float scale = 0f;
-        
+
         switch (behavior) {
             case AspectFit: {
                 scale = Math.min(xRatio, yRatio);
@@ -272,14 +272,14 @@ public class RobotStyleKit {
                 break;
             }
         }
-        
+
         float newWidth = Math.abs(rect.width() * scale);
         float newHeight = Math.abs(rect.height() * scale);
         result.set(target.centerX() - newWidth / 2,
-            target.centerY() - newHeight / 2,
-            target.centerX() + newWidth / 2,
-            target.centerY() + newHeight / 2);
+                target.centerY() - newHeight / 2,
+                target.centerX() + newWidth / 2,
+                target.centerY() + newHeight / 2);
     }
-    
-    
+
+
 }
