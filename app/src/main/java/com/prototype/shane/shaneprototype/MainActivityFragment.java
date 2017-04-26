@@ -15,6 +15,7 @@ import com.prototype.shane.shaneprototype.view.chatApp.FragmentChat;
 import com.prototype.shane.shaneprototype.view.flickrSharkGrid.FragmentFlickrSharkGrid;
 import com.prototype.shane.shaneprototype.view.paintCode.PaintCodeFragment;
 import com.prototype.shane.shaneprototype.view.rxAndroid.SearchMovieFragment;
+import com.prototype.shane.shaneprototype.view.soundMeter.SoundMeterFragment;
 import com.prototype.shane.shaneprototype.view.wordSearch.FragmentSceneMain;
 
 import java.io.FileInputStream;
@@ -43,7 +44,17 @@ public class MainActivityFragment extends Fragment {
         rootView.findViewById(R.id.buttonInAppGmail).setOnClickListener(createInappOnclickListener());
         rootView.findViewById(R.id.buttonRxAndroid).setOnClickListener(createRXAndroidClickListener());
         rootView.findViewById(R.id.buttonPaintCode).setOnClickListener(createPaintCodeRobotClickListener());
+        rootView.findViewById(R.id.buttonSoundMeter).setOnClickListener(createSoundMeterClickListener());
         return rootView;
+    }
+
+    private View.OnClickListener createSoundMeterClickListener(){
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager().beginTransaction().replace(getId(), new SoundMeterFragment()).addToBackStack(null).commit();
+            }
+        };
     }
 
     private View.OnClickListener createMusicSearchClickListener(){

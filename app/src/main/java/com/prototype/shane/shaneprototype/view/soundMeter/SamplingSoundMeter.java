@@ -14,7 +14,7 @@ Copyright 2014 Scott Logic Ltd
         limitations under the License.
 */
 
-package com.shinobicontrols.soundmeter;
+package com.prototype.shane.shaneprototype.view.soundMeter;
 
 import android.media.audiofx.Visualizer;
 import android.os.Handler;

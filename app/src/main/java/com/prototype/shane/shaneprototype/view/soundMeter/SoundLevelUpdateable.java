@@ -14,7 +14,7 @@ Copyright 2014 Scott Logic Ltd
         limitations under the License.
 */
 
-package com.shinobicontrols.soundmeter;
+package com.prototype.shane.shaneprototype.view.soundMeter;
 
 /**
  * Created by sdavies on 15/01/2014.
