@@ -1,0 +1,13 @@
+#
+# Build configuration for Circle CI
+#
+
+general:
+  branches:
+    ignore:
+      - masters
+      - /release\/.*/
+      - /bugfix\/.*/
+    only:
+      - dev
+
