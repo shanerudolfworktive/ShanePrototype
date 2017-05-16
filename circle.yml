@@ -15,5 +15,5 @@ deployment:
   develop:
     branch: dev
     commands:
-      - ./deploy_dev.sh
+      - sh ./deploy_dev.sh
 
