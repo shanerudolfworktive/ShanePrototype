@@ -11,3 +11,9 @@ general:
     only:
       - dev
 
+deployment:
+  develop:
+    branch: dev
+    commands:
+      - ./deploy_dev.sh
+
