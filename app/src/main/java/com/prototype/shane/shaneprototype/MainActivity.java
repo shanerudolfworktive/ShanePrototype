@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().add(R.id.container, new MainActivityFragment()).commit();
         }
-        
+         
     }
 
     @Override
