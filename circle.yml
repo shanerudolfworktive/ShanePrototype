@@ -26,7 +26,7 @@ general:
 test:
   override:
     - ./gradlew assembleRelease
-    - cp -r ShanePrototype/build/outputs $CIRCLE_ARTIFACTS
+    - cp -r ./app/build/outputs $CIRCLE_ARTIFACTS
 
 deployment:
   develop:
