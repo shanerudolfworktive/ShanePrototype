@@ -23,6 +23,11 @@ general:
     only:
       - dev
 
+test:
+    override:
+        - ./ShanePrototype/gradlew assembleDebug -p ./ShanePrototype -PCIversionName=$APP_VERSION_NAME.$VERSION_DATE -PCIversionCode=$((APP_VERSION_CODE+1))
+        - cp -r ./ShanePrototype/app/build/outputs $CIRCLE_ARTIFACTS
+
 deployment:
   develop:
     branch: dev
