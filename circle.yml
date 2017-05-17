@@ -2,6 +2,18 @@
 # Build configuration for Circle CI
 #
 
+machine:
+
+  environment:
+    # Date format to be used in naming
+    # yyyymmddHHMM
+    VERSION_DATE : $(date +%Y%m%d%k%M)
+    APK_PATH: '/outputs/apk/app-debug.apk'
+    ANDROID_HOME: /usr/local/android-sdk-linux
+
+  java:
+    version: oraclejdk8
+
 general:
   branches:
     ignore:
@@ -15,5 +27,4 @@ deployment:
   develop:
     branch: dev
     commands:
-      - sh ./deploy_dev.sh
-
+      - sh ./scripts/deploy_dev.sh $CIRCLE_ARTIFACTS$APK_PATH $HOCKEYAPP_TOKEN $HOCKEYAPP_APP_ID
