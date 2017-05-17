@@ -24,7 +24,7 @@ general:
       - dev
 
 deployment:
-  hockey:
-    branch: master
+  develop:
+    branch: dev
     commands:
-      - ipa distribute:hockeyapp -m "circleci build" --token $HOCKEYAPP_TOKEN
+      - sh ./scripts/deploy_dev.sh $CIRCLE_ARTIFACTS$APK_PATH $HOCKEYAPP_TOKEN $HOCKEYAPP_APP_ID
