@@ -13,6 +13,7 @@ import com.prototype.shane.shaneprototype.controller.musicSearch.ControllerMusic
 import com.prototype.shane.shaneprototype.controller.sdFileScan.ControllerSDFileScan;
 import com.prototype.shane.shaneprototype.view.chatApp.FragmentChat;
 import com.prototype.shane.shaneprototype.view.flickrSharkGrid.FragmentFlickrSharkGrid;
+import com.prototype.shane.shaneprototype.view.kotlinFun.FragmentDetailKotlin;
 import com.prototype.shane.shaneprototype.view.paintCode.PaintCodeFragment;
 import com.prototype.shane.shaneprototype.view.rxAndroid.SearchMovieFragment;
 import com.prototype.shane.shaneprototype.view.soundMeter.SoundMeterFragment;
@@ -45,7 +46,17 @@ public class MainActivityFragment extends Fragment {
         rootView.findViewById(R.id.buttonRxAndroid).setOnClickListener(createRXAndroidClickListener());
         rootView.findViewById(R.id.buttonPaintCode).setOnClickListener(createPaintCodeRobotClickListener());
         rootView.findViewById(R.id.buttonSoundMeter).setOnClickListener(createSoundMeterClickListener());
+        rootView.findViewById(R.id.buttonKotlinFun).setOnClickListener(createKotlinFunClickListener());
         return rootView;
+    }
+
+    private View.OnClickListener createKotlinFunClickListener(){
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager().beginTransaction().replace(getId(), new FragmentDetailKotlin()).addToBackStack(null).commit();
+            }
+        };
     }
 
     private View.OnClickListener createSoundMeterClickListener(){

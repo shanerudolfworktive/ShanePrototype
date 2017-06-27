@@ -11,6 +11,7 @@
     <string name="rxAndroidPrototype">RX Android Prototype</string>
     <string name="paintCodeRobot">Paint Code Robot</string>
     <string name="SoundMeterPrototype">Sound Meter Prototype</string>
+    <string name="KotlinFunPrototype">Kotlin Fun Prototype</string>
 
     <string name="title_key">title: </string>
     <string name="artist_key">artist: </string>
